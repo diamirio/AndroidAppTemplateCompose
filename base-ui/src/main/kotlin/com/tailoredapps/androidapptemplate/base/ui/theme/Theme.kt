@@ -98,7 +98,3 @@ object AppTheme {
         @Composable
         get() = MaterialTheme.typography
 }
-
-val Dimens: Dimensions
-    @Composable
-    get() = AppTheme.dimens
