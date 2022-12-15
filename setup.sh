@@ -39,7 +39,7 @@ read -p "${bold}App name (e.g. MainGau, note: without the suffix 'App'):${normal
 # trim app name
 appName=$(echo $appName | xargs echo -n)
 appNameNoWhiteSpace=$(echo $appName | sed -e 's/ //g')
-appClassName="${appNameNoWhiteSpace^}"
+appClassName=${appNameNoWhiteSpace^}
 appClassName=${appClassName%"app"}
 appClassName=${appClassName%"App"}
 appClassName=${appClassName%"Application"}
