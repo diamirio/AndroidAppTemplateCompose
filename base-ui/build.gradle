@@ -7,7 +7,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion versionForLibs.androidx_compose_compiler_compiler)
+        kotlinCompilerExtensionVersion versionFor(Libs.androidx_compose_compiler_compiler)
     }
 }
 
