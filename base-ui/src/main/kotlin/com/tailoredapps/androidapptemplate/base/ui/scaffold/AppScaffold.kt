@@ -22,7 +22,7 @@ import com.tailoredapps.androidapptemplate.base.ui.bar.AppTopBarSize
 @Composable
 fun AppScaffold(
     title: String,
-    usesTonalElevation: Boolean,
+    usesTonalElevation: Boolean = true,
     topBarSize: AppTopBarSize = AppTopBarSize.Small,
     scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
     navigationIcon: @Composable () -> Unit = {},
@@ -48,7 +48,7 @@ fun AppScaffold(
 @Composable
 fun AppScaffold(
     @StringRes titleRes: Int,
-    usesTonalElevation: Boolean,
+    usesTonalElevation: Boolean = true,
     topBarSize: AppTopBarSize = AppTopBarSize.Small,
     scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
     navigationIcon: @Composable () -> Unit = {},

@@ -23,19 +23,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.imePadding
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
-import com.tailoredapps.androidapptemplate.base.ui.scaffold.AppScaffold
 import com.tailoredapps.androidapptemplate.base.ui.theme.AppTheme
 import com.tailoredapps.androidapptemplate.navigation.AppNavHost
 
@@ -43,6 +38,9 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
             val view = LocalView.current
             val darkTheme = isSystemInDarkTheme()
@@ -72,16 +70,7 @@ class MainActivity : ComponentActivity() {
 fun MainView() {
     AppTheme {
         val navController = rememberNavController()
-
-        AppScaffold(title = "Android App Template", usesTonalElevation = true) { contentPadding ->
-            Box(
-                modifier = Modifier
-                    .padding(contentPadding)
-                    .imePadding()
-            ) {
-                navController.AppNavHost()
-            }
-        }
+        navController.AppNavHost()
     }
 }
 

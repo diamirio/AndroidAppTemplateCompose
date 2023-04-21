@@ -31,7 +31,7 @@ enum class AppTopBarSize {
 @Composable
 fun AppTopBar(
     title: String,
-    usesTonalElevation: Boolean,
+    usesTonalElevation: Boolean = true,
     size: AppTopBarSize = AppTopBarSize.Small,
     navigationIcon: @Composable () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
