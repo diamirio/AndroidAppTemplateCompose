@@ -22,7 +22,3 @@ class Dimensions(
     val dimen72: Dp = 72.dp,
     val dimen80: Dp = 80.dp
 )
-
-val smallDimensions = Dimensions()
-
-val sw360Dimensions = Dimensions()

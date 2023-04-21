@@ -19,8 +19,13 @@ object Libs {
     const val androidx_compose_compiler_compiler: String =
             "androidx.compose.compiler:compiler:_"
 
-    const val androidx_compose_material_material: String =
-            "androidx.compose.material:material:_"
+    const val material3: String = "androidx.compose.material3:material3:_"
+
+    const val material3_window_size_class: String =
+            "androidx.compose.material3:material3-window-size-class:_"
+
+    const val material_icons_extended: String =
+            "androidx.compose.material:material-icons-extended:_"
 
     const val ui: String = "androidx.compose.ui:ui:_"
 
@@ -127,9 +132,6 @@ object Libs {
 
     const val kotlin_parcelize_runtime: String =
             "org.jetbrains.kotlin:kotlin-parcelize-runtime:_"
-
-    const val kotlin_scripting_compiler_embeddable: String =
-            "org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:_"
 
     const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:_"
 
