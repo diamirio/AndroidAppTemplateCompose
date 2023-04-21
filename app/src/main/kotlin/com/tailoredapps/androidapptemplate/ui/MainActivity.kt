@@ -35,7 +35,6 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
-import com.tailoredapps.androidapptemplate.base.provider.ProvideLocalNavController
 import com.tailoredapps.androidapptemplate.base.ui.scaffold.AppScaffold
 import com.tailoredapps.androidapptemplate.base.ui.theme.AppTheme
 import com.tailoredapps.androidapptemplate.navigation.AppNavHost
@@ -80,9 +79,7 @@ fun MainView() {
                     .padding(contentPadding)
                     .imePadding()
             ) {
-                ProvideLocalNavController(navController) {
-                    navController.AppNavHost()
-                }
+                navController.AppNavHost()
             }
         }
     }
