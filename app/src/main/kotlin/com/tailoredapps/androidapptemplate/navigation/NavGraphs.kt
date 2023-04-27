@@ -13,19 +13,19 @@ import androidx.navigation.navigation
 @Composable
 fun NavHostController.AppNavHost() {
     NavHost(navController = this, startDestination = NestedNav.Main.route) {
-        mainGraph()
+        mainGraph(this@AppNavHost)
     }
 }
 
 /**
  * Main Graph
  */
-fun NavGraphBuilder.mainGraph() {
+fun NavGraphBuilder.mainGraph(navHostController: NavHostController) {
     navigation(startDestination = Screen.Overview.route, route = NestedNav.Main.route) {
-        composableOf(Screen.Overview)
+        composableOf(navHostController, Screen.Overview)
     }
 }
 
-private fun NavGraphBuilder.composableOf(screen: Screen) {
-    composable(screen.route) { screen.View(it) }
+private fun NavGraphBuilder.composableOf(navHostController: NavHostController, screen: Screen) {
+    composable(screen.route) { screen.View(navHostController, it) }
 }
