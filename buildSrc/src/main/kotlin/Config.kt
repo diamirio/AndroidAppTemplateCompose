@@ -33,6 +33,9 @@ object Config {
     val kotlinFreeCompilerArgs = listOf(
         "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
         "-opt-in=kotlinx.coroutines.DelicateCoroutinesApi",
-        "-opt-in=kotlinx.coroutines.FlowPreview"
+        "-opt-in=kotlinx.coroutines.FlowPreview",
+        "-opt-in=kotlinx.serialization.ExperimentalSerializationApi",
+        "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+        "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi"
     )
 }

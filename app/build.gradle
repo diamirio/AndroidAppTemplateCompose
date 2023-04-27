@@ -10,6 +10,7 @@ plugins {
 
 android {
     compileSdkVersion Config.compileSdk
+    namespace "com.tailoredapps.androidapptemplate"
 
     defaultConfig {
         versionCode Config.versionCode

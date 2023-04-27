@@ -1,4 +1,8 @@
-apply from: rootProject.file("gradle/library-module.gradle")
+apply from: rootProject.file("gradle/library-module-android.gradle")
+
+android {
+    namespace = "com.tailoredapps.androidapptemplate.core"
+}
 
 dependencies {
     api(Libs.gson)

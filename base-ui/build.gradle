@@ -3,6 +3,8 @@ import static de.fayard.refreshVersions.core.Versions.versionFor
 apply from: rootProject.file("gradle/library-module-android.gradle")
 
 android {
+    namespace "com.tailoredapps.androidapptemplate.base.control"
+
     buildFeatures {
         compose true
         viewBinding = true
@@ -23,16 +25,17 @@ dependencies {
     api(Libs.lifecycle_runtime_ktx)
     api(Libs.lifecycle_viewmodel_ktx)
     api(Libs.com_google_android_material_material)
+    api(Libs.material_icons_extended)
     api(Libs.navigation_fragment_ktx)
     api(Libs.navigation_ui_ktx)
 
     // compose
-    api(Libs.accompanist_systemuicontroller)
     api(Libs.coil_compose)
     api(Libs.koin_androidx_compose)
     api(Libs.activity_compose)
     api(Libs.ui)
-    api(Libs.androidx_compose_material_material)
+    api(Libs.material3)
+    api(Libs.material3_window_size_class)
     api(Libs.animation)
     api(Libs.lifecycle_viewmodel_compose)
     api(Libs.navigation_compose)

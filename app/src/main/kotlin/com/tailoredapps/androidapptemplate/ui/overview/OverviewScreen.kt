@@ -1,10 +1,19 @@
 package com.tailoredapps.androidapptemplate.ui.overview
 
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import coil.compose.rememberAsyncImagePainter
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import com.tailoredapps.androidapptemplate.R
+import com.tailoredapps.androidapptemplate.base.ui.scaffold.AppScaffold
+import com.tailoredapps.androidapptemplate.base.ui.theme.AppTheme
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -13,9 +22,38 @@ fun OverviewScreen(
 ) {
     val viewModelState by viewModel.state.collectAsState()
 
-    Image(
-        painter = rememberAsyncImagePainter(viewModelState.logoUrl),
-        contentDescription = null,
+    OverviewView(
+        title = stringResource(id = R.string.app_name)
     )
+}
+
+@Composable
+private fun OverviewView(
+    title: String
+) {
+    AppScaffold(title = title) { contentPadding ->
+        LazyColumn(
+            modifier = Modifier.padding(contentPadding)
+        ) {
+            items((0..500).toList()) {
+                Text(
+                    text = it.toString(),
+                    modifier = Modifier
+                        .padding(AppTheme.dimens.dimen16)
+                        .fillMaxWidth()
+                )
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+private fun OverviewPreview() {
+    AppTheme {
+        OverviewView(
+            title = stringResource(id = R.string.app_name)
+        )
+    }
 }
 

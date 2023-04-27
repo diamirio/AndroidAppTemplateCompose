@@ -18,51 +18,59 @@
 package com.tailoredapps.androidapptemplate.ui
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.imePadding
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
-import androidx.compose.material.rememberScaffoldState
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
-import com.tailoredapps.androidapptemplate.base.provider.ProvideLocalNavController
 import com.tailoredapps.androidapptemplate.base.ui.theme.AppTheme
 import com.tailoredapps.androidapptemplate.navigation.AppNavHost
-import com.tailoredapps.androidapptemplate.ui.toolbar.Toolbar
 
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { MainView() }
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        setContent {
+            val view = LocalView.current
+            val darkTheme = isSystemInDarkTheme()
+
+            MainView()
+
+            SideEffect {
+                val window = this.window
+
+                window.statusBarColor = Color.Transparent.toArgb()
+                window.navigationBarColor = Color.Transparent.toArgb()
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    window.isNavigationBarContrastEnforced = false
+                }
+
+                val windowsInsetsController = WindowCompat.getInsetsController(window, view)
+
+                windowsInsetsController.isAppearanceLightStatusBars = !darkTheme
+                windowsInsetsController.isAppearanceLightNavigationBars = !darkTheme
+            }
+        }
     }
 }
 
 @Composable
 fun MainView() {
     AppTheme {
-        val scaffoldState = rememberScaffoldState()
         val navController = rememberNavController()
-
-        Scaffold(
-            scaffoldState = scaffoldState,
-            topBar = { Toolbar() }
-        ) { contentPadding ->
-            Box(
-                modifier = Modifier
-                    .padding(contentPadding)
-                    .imePadding()
-            ) {
-                ProvideLocalNavController(navController) {
-                    navController.AppNavHost()
-                }
-            }
-        }
+        navController.AppNavHost()
     }
 }
 
