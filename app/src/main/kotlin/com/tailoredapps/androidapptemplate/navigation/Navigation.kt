@@ -1,30 +1,71 @@
 package com.tailoredapps.androidapptemplate.navigation
 
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
-import com.tailoredapps.androidapptemplate.R
-import com.tailoredapps.androidapptemplate.ui.overview.OverviewScreen
+import androidx.navigation.compose.composable
+import androidx.navigation.navigation
 
-sealed class Screen {
-    @get:StringRes
-    abstract val titleRes: Int
 
-    abstract val route: String
+enum class NavHosts(val route: String) {
+    APP("nav_host_app"),
+    Main("nav_host_main")
+}
 
-    @Composable
-    abstract fun View(navHostController: NavHostController, navBackStackEntry: NavBackStackEntry)
+enum class NavGraphs(
+    val route: String,
+    val screens: List<Screen>
+) {
+    Main("nav_main", listOf(Screen.Main)),
+    Overview("nav_overview", listOf(Screen.Overview, Screen.Detail)),
+}
 
-    object Overview : Screen() {
-        override val titleRes: Int = R.string.screen_overview
-        override val route: String = "overview"
 
-        @Composable
-        override fun View(navHostController: NavHostController, navBackStackEntry: NavBackStackEntry) = OverviewScreen()
+enum class BottomNav(
+    val navGraph: NavGraphs,
+    @DrawableRes val icon: Int,
+    @StringRes val title: Int = navGraph.screens[0].titleRes
+) {
+    Overview(NavGraphs.Overview, android.R.drawable.ic_menu_view),
+}
+
+
+/**
+ * Extensions
+ */
+fun NavGraphBuilder.graph(
+    navHostController: NavHostController,
+    graph: NavGraphs
+) {
+    navigation(startDestination = graph.screens.first().route, route = graph.route) {
+        for (screen in graph.screens) {
+            composableOf(navHostController, screen)
+        }
     }
 }
 
-enum class NestedNav(val route: String) {
-    Main("nav_main"),
+fun NavGraphBuilder.graph(
+    navHostController: NavHostController,
+    outerNavHostController: NavHostController,
+    graph: NavGraphs
+) {
+    navigation(startDestination = Screen.Main.route, route = NavGraphs.Main.route) {
+        for (screen in graph.screens) {
+            composableOf(navHostController, outerNavHostController, Screen.Main)
+        }
+    }
+}
+
+internal fun NavGraphBuilder.composableOf(
+    navHostController: NavHostController,
+    screen: Screen
+) = this.composableOf(navHostController, null, screen)
+
+private fun NavGraphBuilder.composableOf(
+    navHostController: NavHostController,
+    outerNavHostController: NavHostController?,
+    screen: Screen
+) {
+    composable(screen.route) { screen.View(navHostController, outerNavHostController, it) }
 }

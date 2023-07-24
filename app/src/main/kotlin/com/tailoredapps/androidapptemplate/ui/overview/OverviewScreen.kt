@@ -1,5 +1,6 @@
 package com.tailoredapps.androidapptemplate.ui.overview
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -19,17 +20,20 @@ import org.koin.androidx.compose.getViewModel
 @Composable
 fun OverviewScreen(
     viewModel: OverviewViewModel = getViewModel(),
+    onListElementClicked: (id: Int) -> Unit
 ) {
     val viewModelState by viewModel.state.collectAsState()
 
     OverviewView(
-        title = stringResource(id = R.string.app_name)
+        title = stringResource(id = R.string.app_name),
+        onListElementClicked = onListElementClicked
     )
 }
 
 @Composable
 private fun OverviewView(
-    title: String
+    title: String,
+    onListElementClicked: (id: Int) -> Unit
 ) {
     AppScaffold(title = title) { contentPadding ->
         LazyColumn(
@@ -41,6 +45,7 @@ private fun OverviewView(
                     modifier = Modifier
                         .padding(AppTheme.dimens.dimen16)
                         .fillMaxWidth()
+                        .clickable { onListElementClicked(it) }
                 )
             }
         }
@@ -52,7 +57,8 @@ private fun OverviewView(
 private fun OverviewPreview() {
     AppTheme {
         OverviewView(
-            title = stringResource(id = R.string.app_name)
+            title = stringResource(id = R.string.app_name),
+            onListElementClicked = {}
         )
     }
 }
