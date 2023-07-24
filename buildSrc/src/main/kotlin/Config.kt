@@ -27,7 +27,7 @@ object Config {
     val archiveName = "$appName-v$versionName-b$versionCode"
 
     @JvmStatic
-    val javaVersion = JavaVersion.VERSION_11
+    val javaVersion = JavaVersion.VERSION_17
 
     @JvmStatic
     val kotlinFreeCompilerArgs = listOf(

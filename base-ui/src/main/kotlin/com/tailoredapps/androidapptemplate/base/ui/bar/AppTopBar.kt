@@ -43,7 +43,7 @@ fun AppTopBar(
         navigationIcon = navigationIcon,
         actions = actions,
         scrollBehavior = scrollBehavior,
-        colors = TopAppBarDefaults.smallTopAppBarColors(
+        colors = TopAppBarDefaults.topAppBarColors(
             containerColor = color,
             scrolledContainerColor = MaterialTheme.colorScheme.applyTonalElevation(
                 backgroundColor = color,
@@ -91,7 +91,7 @@ private fun AppTopBarSmall(
     navigationIcon: @Composable () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
     windowInsets: WindowInsets = TopAppBarDefaults.windowInsets,
-    colors: TopAppBarColors = TopAppBarDefaults.smallTopAppBarColors(),
+    colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(),
     scrollBehavior: TopAppBarScrollBehavior? = null
 ) = TopAppBar(
     title = { Text(text = title) },
