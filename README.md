@@ -148,6 +148,7 @@ The goal of these conventions is to reduce the effort needed to read and underst
 * [Kotlin Coroutines](https://kotlinlang.org/docs/reference/coroutines/basics.html)
 * [Kotlin Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html)
 * [Jetpack Compose](https://developer.android.com/jetpack/compose)
+* [Compose Metrics](https://chrisbanes.me/posts/composable-metrics)
 * [control](https://github.com/floschu/control/)
 * [Koin](https://insert-koin.io/)
 * [Retrofit](http://www.vogella.com/tutorials/Retrofit/article.html)
