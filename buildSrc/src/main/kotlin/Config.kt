@@ -6,10 +6,10 @@ object Config {
     val minSdk = 23
 
     @JvmStatic
-    val compileSdk = 33
+    val compileSdk = 34
 
     @JvmStatic
-    val targetSdk = 33
+    val targetSdk = 34
 
     @JvmStatic
     val versionCode = 1
