@@ -4,15 +4,15 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navigation
-import com.tailoredapps.androidapptemplate.navigation.screens.detailRoute
-import com.tailoredapps.androidapptemplate.navigation.screens.detailScreen
-import com.tailoredapps.androidapptemplate.navigation.screens.mainRoute
-import com.tailoredapps.androidapptemplate.navigation.screens.mainScreen
-import com.tailoredapps.androidapptemplate.navigation.screens.overviewRoute
-import com.tailoredapps.androidapptemplate.navigation.screens.overviewScreen
+import com.tailoredapps.androidapptemplate.navigation.destinations.ROUTE_MAIN
+import com.tailoredapps.androidapptemplate.navigation.destinations.ROUTE_OVERVIEW
+import com.tailoredapps.androidapptemplate.navigation.destinations.detailScreen
+import com.tailoredapps.androidapptemplate.navigation.destinations.mainScreen
+import com.tailoredapps.androidapptemplate.navigation.destinations.navigateToDetail
+import com.tailoredapps.androidapptemplate.navigation.destinations.overviewScreen
 
 enum class NavHosts(val route: String) {
-    APP("nav_host_app"),
+    App("nav_host_app"),
     Main("nav_host_main")
 }
 
@@ -30,17 +30,16 @@ enum class NavGraphs(
 fun NavHostController.AppNavHost() {
     NavHost(
         navController = this,
-        route = NavHosts.APP.route,
+        route = NavHosts.App.route,
         startDestination = NavGraphs.Main.route
     ) {
-        navigation(startDestination = mainRoute(), route = NavGraphs.Main.route) {
-            mainScreen { mainNavHostController ->
-                mainNavHostController.MainNavHost()
+        navigation(startDestination = ROUTE_MAIN, route = NavGraphs.Main.route) {
+            mainScreen { navHostController ->
+                navHostController.MainNavHost()
             }
         }
     }
 }
-
 
 /**
  * Main Nav Host
@@ -52,10 +51,10 @@ fun NavHostController.MainNavHost() {
         route = NavHosts.Main.route,
         startDestination = NavGraphs.Overview.route
     ) {
-        navigation(startDestination = overviewRoute(), route = NavGraphs.Overview.route) {
-            overviewScreen { id ->
-                this@MainNavHost.navigate(detailRoute(id))
-            }
+        navigation(startDestination = ROUTE_OVERVIEW, route = NavGraphs.Overview.route) {
+            overviewScreen(
+                onListElementClicked = this@MainNavHost::navigateToDetail
+            )
 
             detailScreen()
         }

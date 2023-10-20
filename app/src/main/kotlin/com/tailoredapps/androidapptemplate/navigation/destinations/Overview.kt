@@ -1,16 +1,17 @@
-package com.tailoredapps.androidapptemplate.navigation.screens
+package com.tailoredapps.androidapptemplate.navigation.destinations
 
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.tailoredapps.androidapptemplate.ui.overview.OverviewScreen
 
-
-private const val OVERVIEW_ROUTE: String = "overview"
-
-internal fun overviewRoute(): String = OVERVIEW_ROUTE
+internal const val ROUTE_OVERVIEW: String = "overview"
 
 internal fun NavGraphBuilder.overviewScreen(onListElementClicked: (Int) -> Unit) {
-    composable(OVERVIEW_ROUTE) {
+    composable(ROUTE_OVERVIEW) {
         OverviewScreen(onListElementClicked = onListElementClicked)
     }
 }
+
+internal fun NavController.navigateToOverview() =
+    this.navigate(ROUTE_OVERVIEW)
