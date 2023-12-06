@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion Config.compileSdk
+    compileSdk Config.compileSdk
     namespace "com.tailoredapps.androidapptemplate"
 
     defaultConfig {
