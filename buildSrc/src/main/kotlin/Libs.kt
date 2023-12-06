@@ -37,12 +37,6 @@ object Libs {
 
     const val core_ktx: String = "androidx.core:core-ktx:_"
 
-    const val viewbinding: String = "androidx.databinding:viewbinding:_"
-
-    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:_"
-
-    const val fragment_testing: String = "androidx.fragment:fragment-testing:_"
-
     const val lifecycle_runtime_ktx: String = "androidx.lifecycle:lifecycle-runtime-ktx:_"
 
     const val lifecycle_runtime_testing: String =
@@ -55,11 +49,6 @@ object Libs {
             "androidx.lifecycle:lifecycle-viewmodel-ktx:_"
 
     const val navigation_compose: String = "androidx.navigation:navigation-compose:_"
-
-    const val navigation_fragment_ktx: String =
-            "androidx.navigation:navigation-fragment-ktx:_"
-
-    const val navigation_ui_ktx: String = "androidx.navigation:navigation-ui-ktx:_"
 
     const val espresso_contrib: String = "androidx.test.espresso:espresso-contrib:_"
 
@@ -87,8 +76,6 @@ object Libs {
     const val threetenabp: String = "com.jakewharton.threetenabp:threetenabp:_"
 
     const val timber: String = "com.jakewharton.timber:timber:_"
-
-    const val ktlint: String = "com.pinterest:ktlint:_"
 
     const val leakcanary_android: String = "com.squareup.leakcanary:leakcanary-android:_"
 
