@@ -43,9 +43,9 @@ private fun OverviewView(
                 Text(
                     text = it.toString(),
                     modifier = Modifier
-                        .padding(AppTheme.dimens.dimen16)
                         .fillMaxWidth()
                         .clickable { onListElementClicked(it) }
+                        .padding(AppTheme.dimens.dimen16)
                 )
             }
         }
