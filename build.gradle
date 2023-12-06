@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
     repositories {
         google()
@@ -18,19 +20,22 @@ allprojects {
     }
 }
 
+def projectBuildDirPath = project.layout.buildDirectory.get().toString()
+
 subprojects {
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    tasks.withType(KotlinCompile).configureEach {
+        //noinspection GrDeprecatedAPIUsage
         kotlinOptions {
             if (project.findProperty("myapp.enableComposeCompilerReports") == "true") {
                 freeCompilerArgs += [
                         "-P",
                         "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
-                                project.buildDir.absolutePath + "/compose_metrics"
+                                projectBuildDirPath + "/compose_metrics"
                 ]
                 freeCompilerArgs += [
                         "-P",
                         "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
-                                project.buildDir.absolutePath + "/compose_metrics"
+                                projectBuildDirPath + "/compose_metrics"
                 ]
             }
         }
