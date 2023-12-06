@@ -20,7 +20,6 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
     * [Dependencies](#dependencies)
         * [How to add a dependency](#adddependencies)
     * [ktlint](#ktlint)
-    * [Resource Naming Conventions](#resource_naming_conventions)
 * [Recommended Reading](#recommended_reading)
 * [License](#license)
 
@@ -123,24 +122,6 @@ To conform to the rules either:
 
 * configure AndroidStudio [accordingly](https://github.com/pinterest/ktlint#-with-intellij-idea).
 * use `./gradlew ktlintApplyToIdea` to overwrite IDE style files. Read more [here](https://github.com/JLLeitschuh/ktlint-gradle).
-
-
-### Resource Naming Conventions <a name="resource_naming_conventions"></a>
-
-The goal of these conventions is to reduce the effort needed to read and understand code and also enable reviews to focus on more important issues than arguing over syntax.
-
-**Bold** rules should be applied. *Italic* rules are optional.
-
-| Component        | Rule             | Example                   |
-| ---------------- | ---------------------- | ----------------------------- |
-| Layouts | **\<what\>**\_**\<where\>**.xml | `activity_main.xml`, `item_detail.xml` |
-| Sub-Layouts | **\<what\>**\_**\<where\>**\_**\<description\>**.xml | `activity_main_appbar.xml` |
-| Strings | **\<where\>**\_**\<what\>**\_**\<description\>** | `detail_tv_location` |
-| Drawables | **\<what\>**\_**\<where\>**\_**\<description\>** | `btn_detail_background`, `card_overview_background` |
-| Icons | ic_**\<description\>**\_**\<where\>**.xml | `ic_close.xml`, `ic_location_pin_detail.xml` |
-| Dimensions | *\<where\>*\_**\<what\>**\_*\<description\>*\_*\<size\>* | `margin`, `detail_height_card`, `textsize_small` |
-| Styles | **\<What\>**\.**\<Description\>** | `Text.Bold`, `Ratingbar.Preview` |
-| Component Ids | **\<what\>\<Description\>** | `btnOpen`, `tvTitle` |
 
 
 ## Recommended Reading <a name="recommended_reading"></a>
