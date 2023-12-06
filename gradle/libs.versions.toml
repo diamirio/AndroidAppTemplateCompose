@@ -1,0 +1,97 @@
+[versions]
+android-gradle-plugin = "8.2.0"
+androidx-activity = "1.8.1"
+androidx-compose-ui = "1.5.4"
+androidx-core = "1.12.0"
+androidx-lifecycle = "2.6.2"
+androidx-material3 = "1.1.2"
+androidx-navigation = "2.7.5"
+androidx-test-core = "1.5.0"
+androidx-test-espresso = "3.5.1"
+androidx-test-ext-junit = "1.1.5"
+androidx-test-rules = "1.5.0"
+androidx-test-runner = "1.5.2"
+benmanes-versions = "0.50.0"
+coil = "2.5.0"
+collections-immutable = "0.3.6"
+compose-compiler = "1.5.5"
+control-core = "1.2.0"
+google-material = "1.10.0"
+junit = "4.13.2"
+koin = "3.5.0"
+kotlin = "1.9.20"
+kotlinter = "3.16.0"
+kotlinx-coroutines = "1.7.3"
+ksp = "1.9.20-1.0.14"
+leakcanary = "2.12"
+littlerobots-version-catalog-updates = "0.8.1"
+mock = "1.13.8"
+okhttp = "4.12.0"
+retrofit = "2.9.0"
+retrofit2-kotlinx-serialization-converter = "1.0.0"
+serialization-json = "1.6.1"
+slack-linter = "1.2.0"
+timber = "5.0.1"
+
+
+[libraries]
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
+androidx-compose-animation-core = { module = "androidx.compose.animation:animation", version.ref = "androidx-compose-ui" }
+androidx-compose-compiler-core = { module = "androidx.compose.compiler:compiler", version.ref = "compose-compiler" }
+androidx-compose-material-icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "androidx-compose-ui" }
+androidx-compose-material3-core = { module = "androidx.compose.material3:material3", version.ref = "androidx-material3" }
+androidx-compose-material3-window = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "androidx-material3" }
+androidx-compose-ui-core = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-tooling-core = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "androidx-compose-ui" }
+androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose-ui" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-testing = { module = "androidx.lifecycle:lifecycle-runtime-testing", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidx-test-core" }
+androidx-test-espresso-contrib = { module = "androidx.test.espresso:espresso-contrib", version.ref = "androidx-test-espresso" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
+androidx-test-espresso-intents = { module = "androidx.test.espresso:espresso-intents", version.ref = "androidx-test-espresso" }
+androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-test-ext-junit" }
+androidx-test-rules = { module = "androidx.test:rules", version.ref = "androidx-test-rules" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidx-test-runner" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+floschu-control-core = { module = "at.florianschuster.control:control-core", version.ref = "control-core" }
+google-material-core = { module = "com.google.android.material:material", version.ref = "google-material" }
+jakewharton-timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+jakewharton-retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2-kotlinx-serialization-converter" }
+junit = { module = "junit:junit", version.ref = "junit" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "collections-immutable" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization-json" }
+mock = { module = "io.mockk:mockk", version.ref = "mock" }
+slack-lint-compose = { module = "com.slack.lint.compose:compose-lint-checks", version.ref = "slack-linter" }
+square-leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
+square-leakcanary-objectwatcher = { module = "com.squareup.leakcanary:leakcanary-object-watcher-android", version.ref = "leakcanary" }
+square-okhttp-core = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+square-okhttp-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+square-retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+square-retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+jmailen-kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+versions-core = { id = "com.github.ben-manes.versions", version.ref = "benmanes-versions"}
+versions-catalog = { id = "nl.littlerobots.version-catalog-update", version.ref = "littlerobots-version-catalog-updates"}
