@@ -9,4 +9,4 @@ refreshVersions {
 
 include ':app'
 include ':core'
-include 'base-ui'
+include ':base-ui'
