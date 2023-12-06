@@ -6,10 +6,10 @@ object Config {
     val minSdk = 23
 
     @JvmStatic
-    val compileSdk = 33
+    val compileSdk = 34
 
     @JvmStatic
-    val targetSdk = 33
+    val targetSdk = 34
 
     @JvmStatic
     val versionCode = 1
@@ -27,7 +27,7 @@ object Config {
     val archiveName = "$appName-v$versionName-b$versionCode"
 
     @JvmStatic
-    val javaVersion = JavaVersion.VERSION_11
+    val javaVersion = JavaVersion.VERSION_17
 
     @JvmStatic
     val kotlinFreeCompilerArgs = listOf(

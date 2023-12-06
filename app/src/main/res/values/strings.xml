@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="screen_overview">Overview</string>
+    <string name="screen_detail">Detail</string>
 </resources>

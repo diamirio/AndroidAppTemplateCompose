@@ -67,7 +67,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainView() {
+private fun MainView() {
     AppTheme {
         val navController = rememberNavController()
         navController.AppNavHost()
@@ -76,12 +76,12 @@ fun MainView() {
 
 @Preview(name = "MainView")
 @Composable
-fun MainViewPreview() {
+private fun MainViewPreview() {
     MainView()
 }
 
 @Preview(name = "MainView Night", uiMode = UI_MODE_NIGHT_YES)
 @Composable
-fun MainViewPreviewNight() {
+private fun MainViewPreviewNight() {
     MainView()
 }
