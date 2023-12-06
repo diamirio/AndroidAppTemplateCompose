@@ -7,7 +7,7 @@
  *     $ ./gradlew refreshVersions
  * And edit the file `versions.properties`
  *
- * See https://github.com/jmfayard/refreshVersions
+ * See https://github.com/Splitties/refreshVersions
  */
 object Libs {
     const val activity_compose: String = "androidx.activity:activity-compose:_"
@@ -36,6 +36,9 @@ object Libs {
     const val ui_tooling_preview: String = "androidx.compose.ui:ui-tooling-preview:_"
 
     const val core_ktx: String = "androidx.core:core-ktx:_"
+
+    const val lifecycle_runtime_compose: String =
+            "androidx.lifecycle:lifecycle-runtime-compose:_"
 
     const val lifecycle_runtime_ktx: String = "androidx.lifecycle:lifecycle-runtime-ktx:_"
 
@@ -68,8 +71,7 @@ object Libs {
 
     const val com_android_tools_build_gradle: String = "com.android.tools.build:gradle:_"
 
-    const val com_google_android_material_material: String =
-            "com.google.android.material:material:_"
+    const val material: String = "com.google.android.material:material:_"
 
     const val gson: String = "com.google.code.gson:gson:_"
 
@@ -106,8 +108,6 @@ object Libs {
     const val mockk: String = "io.mockk:mockk:_"
 
     const val junit_junit: String = "junit:junit:_"
-
-    const val org_jacoco_ant: String = "org.jacoco:org.jacoco.ant:_"
 
     const val kotlin_annotation_processing_gradle: String =
             "org.jetbrains.kotlin:kotlin-annotation-processing-gradle:_"

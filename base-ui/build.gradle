@@ -7,7 +7,6 @@ android {
 
     buildFeatures {
         compose true
-        viewBinding = true
     }
 
     composeOptions {
@@ -23,7 +22,7 @@ dependencies {
     api(Libs.kotlin_stdlib_jdk8)
     api(Libs.lifecycle_runtime_ktx)
     api(Libs.lifecycle_viewmodel_ktx)
-    api(Libs.com_google_android_material_material)
+    api(Libs.material)
     api(Libs.material_icons_extended)
 
     // compose
@@ -35,6 +34,7 @@ dependencies {
     api(Libs.material3_window_size_class)
     api(Libs.animation)
     api(Libs.lifecycle_viewmodel_compose)
+    api(Libs.lifecycle_runtime_compose)
     api(Libs.navigation_compose)
     api(Libs.ui_tooling_preview)
     debugApi(Libs.ui_tooling)
