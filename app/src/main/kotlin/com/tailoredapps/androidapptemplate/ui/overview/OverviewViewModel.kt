@@ -24,7 +24,7 @@ import com.tailoredapps.androidapptemplate.base.control.ControllerViewModel
 import com.tailoredapps.androidapptemplate.core.DataRepo
 
 class OverviewViewModel(
-    private val dataRepo: DataRepo
+    private val dataRepo: DataRepo,
 ) : ControllerViewModel<OverviewViewModel.Action, OverviewViewModel.State>() {
 
     sealed class Action
@@ -35,6 +35,6 @@ class OverviewViewModel(
 
     override val controller: Controller<Action, State> =
         viewModelScope.createController<Action, Mutation, State>(
-            initialState = State
+            initialState = State,
         )
 }

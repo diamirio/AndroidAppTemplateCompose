@@ -77,7 +77,7 @@ object EspressoUtils {
             if (adapter != null && adapter.itemCount != count) {
                 throw AssertionFailedError(
                     "RecyclerView with id=" + view.id + " has " +
-                        adapter.itemCount + " items, expected " + count + " items"
+                        adapter.itemCount + " items, expected " + count + " items",
                 )
             }
         } else {

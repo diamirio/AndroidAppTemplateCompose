@@ -27,7 +27,7 @@ import com.tailoredapps.androidapptemplate.base.ui.theme.AppTheme
 enum class AppTopBarSize {
     Small,
     Medium,
-    Large
+    Large,
 }
 
 @Composable
@@ -38,7 +38,7 @@ fun AppTopBar(
     navigationIcon: @Composable () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
     scrollBehavior: TopAppBarScrollBehavior? = null,
-    color: Color = AppTheme.colors.surface
+    color: Color = AppTheme.colors.surface,
 ) = when (size) {
     AppTopBarSize.Small -> AppTopBarSmall(
         title = title,
@@ -50,9 +50,9 @@ fun AppTopBar(
             scrolledContainerColor = MaterialTheme.colorScheme.applyTonalElevation(
                 backgroundColor = color,
                 elevation = ElevationTokens.Level2,
-                usesTonalElevation = usesTonalElevation
-            )
-        )
+                usesTonalElevation = usesTonalElevation,
+            ),
+        ),
     )
 
     AppTopBarSize.Medium -> AppTopBarMedium(
@@ -65,9 +65,9 @@ fun AppTopBar(
             scrolledContainerColor = MaterialTheme.colorScheme.applyTonalElevation(
                 backgroundColor = color,
                 elevation = ElevationTokens.Level2,
-                usesTonalElevation = usesTonalElevation
-            )
-        )
+                usesTonalElevation = usesTonalElevation,
+            ),
+        ),
     )
 
     AppTopBarSize.Large -> AppTopBarLarge(
@@ -80,9 +80,9 @@ fun AppTopBar(
             scrolledContainerColor = MaterialTheme.colorScheme.applyTonalElevation(
                 backgroundColor = color,
                 elevation = ElevationTokens.Level2,
-                usesTonalElevation = usesTonalElevation
-            )
-        )
+                usesTonalElevation = usesTonalElevation,
+            ),
+        ),
     )
 }
 
@@ -94,7 +94,7 @@ private fun AppTopBarSmall(
     actions: @Composable RowScope.() -> Unit = {},
     windowInsets: WindowInsets = TopAppBarDefaults.windowInsets,
     colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(),
-    scrollBehavior: TopAppBarScrollBehavior? = null
+    scrollBehavior: TopAppBarScrollBehavior? = null,
 ) = TopAppBar(
     title = { Text(text = title) },
     modifier = modifier,
@@ -102,7 +102,7 @@ private fun AppTopBarSmall(
     actions = actions,
     windowInsets = windowInsets,
     colors = colors,
-    scrollBehavior = scrollBehavior
+    scrollBehavior = scrollBehavior,
 )
 
 @Composable
@@ -113,7 +113,7 @@ private fun AppTopBarMedium(
     actions: @Composable RowScope.() -> Unit = {},
     windowInsets: WindowInsets = TopAppBarDefaults.windowInsets,
     colors: TopAppBarColors = TopAppBarDefaults.mediumTopAppBarColors(),
-    scrollBehavior: TopAppBarScrollBehavior? = null
+    scrollBehavior: TopAppBarScrollBehavior? = null,
 ) = MediumTopAppBar(
     title = { Text(text = title) },
     modifier = modifier,
@@ -121,7 +121,7 @@ private fun AppTopBarMedium(
     actions = actions,
     windowInsets = windowInsets,
     colors = colors,
-    scrollBehavior = scrollBehavior
+    scrollBehavior = scrollBehavior,
 )
 
 @Composable
@@ -132,7 +132,7 @@ private fun AppTopBarLarge(
     actions: @Composable RowScope.() -> Unit = {},
     windowInsets: WindowInsets = TopAppBarDefaults.windowInsets,
     colors: TopAppBarColors = TopAppBarDefaults.largeTopAppBarColors(),
-    scrollBehavior: TopAppBarScrollBehavior? = null
+    scrollBehavior: TopAppBarScrollBehavior? = null,
 ) = LargeTopAppBar(
     title = { Text(text = title) },
     modifier = modifier,
@@ -140,7 +140,7 @@ private fun AppTopBarLarge(
     actions = actions,
     windowInsets = windowInsets,
     colors = colors,
-    scrollBehavior = scrollBehavior
+    scrollBehavior = scrollBehavior,
 )
 
 class AppTopBarPropertiesPreviewProvider :
@@ -148,7 +148,7 @@ class AppTopBarPropertiesPreviewProvider :
     override val values = sequenceOf(
         AppTopBarSize.Small,
         AppTopBarSize.Medium,
-        AppTopBarSize.Large
+        AppTopBarSize.Large,
     )
 }
 
@@ -160,7 +160,7 @@ class AppTopBarPropertiesPreviewProvider :
 fun ColorScheme.applyTonalElevation(
     backgroundColor: Color,
     elevation: Dp,
-    usesTonalElevation: Boolean
+    usesTonalElevation: Boolean,
 ): Color {
     return if (backgroundColor == surface && usesTonalElevation) {
         surfaceColorAtElevation(elevation)
@@ -183,13 +183,13 @@ object ElevationTokens {
 @Preview(uiMode = UI_MODE_NIGHT_NO)
 @Composable
 private fun AppTopBarSmall(
-    @PreviewParameter(AppTopBarPropertiesPreviewProvider::class) size: AppTopBarSize
+    @PreviewParameter(AppTopBarPropertiesPreviewProvider::class) size: AppTopBarSize,
 ) {
     AppTheme {
         AppTopBar(
             title = "Test",
             size = size,
-            usesTonalElevation = true
+            usesTonalElevation = true,
         )
     }
 }

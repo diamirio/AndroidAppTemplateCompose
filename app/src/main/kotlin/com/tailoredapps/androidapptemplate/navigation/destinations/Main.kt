@@ -10,7 +10,7 @@ import com.tailoredapps.androidapptemplate.ui.main.MainScreen
 internal const val ROUTE_MAIN: String = "main"
 
 internal fun NavGraphBuilder.mainScreen(
-    initNavigation: @Composable (navHostController: NavHostController) -> Unit
+    initNavigation: @Composable (navHostController: NavHostController) -> Unit,
 ) {
     composable(ROUTE_MAIN) {
         MainScreen(initNavigation = initNavigation)

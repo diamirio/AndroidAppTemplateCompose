@@ -1,3 +1,3 @@
 [*.{kt,kts}]
-ktlint_code_style = android_studio # intellij_idea or android_studio
+ktlint_code_style = intellij_idea # intellij_idea or android_studio
 ktlint_standard_function-naming = disabled # due to compose

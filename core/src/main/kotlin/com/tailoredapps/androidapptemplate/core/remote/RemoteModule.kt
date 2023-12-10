@@ -35,7 +35,7 @@ internal val remoteModule = module {
 
 private fun provideOkHttpClient(
     loggingInterceptor: HttpLoggingInterceptor,
-    appBuildInfo: AppBuildInfo
+    appBuildInfo: AppBuildInfo,
 ): OkHttpClient = OkHttpClient().newBuilder().apply {
     if (appBuildInfo.debug) addInterceptor(loggingInterceptor)
 }.build()
@@ -43,7 +43,7 @@ private fun provideOkHttpClient(
 private inline fun <reified T> provideApi(
     okHttpClient: OkHttpClient,
     json: Json,
-    appBuildInfo: AppBuildInfo
+    appBuildInfo: AppBuildInfo,
 ): T = Retrofit.Builder().apply {
     baseUrl(appBuildInfo.baseUrl)
     client(okHttpClient)

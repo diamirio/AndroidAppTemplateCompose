@@ -20,13 +20,13 @@ import org.koin.androidx.compose.getViewModel
 @Composable
 fun OverviewScreen(
     viewModel: OverviewViewModel = getViewModel(),
-    onListElementClicked: (id: Int) -> Unit
+    onListElementClicked: (id: Int) -> Unit,
 ) {
     val viewModelState by viewModel.state.collectAsStateWithLifecycle()
 
     OverviewView(
         title = stringResource(id = R.string.app_name),
-        onListElementClicked = onListElementClicked
+        onListElementClicked = onListElementClicked,
     )
 }
 
@@ -34,7 +34,7 @@ fun OverviewScreen(
 private fun OverviewView(title: String, onListElementClicked: (id: Int) -> Unit) {
     AppScaffold(title = title) { contentPadding ->
         LazyColumn(
-            modifier = Modifier.padding(contentPadding)
+            modifier = Modifier.padding(contentPadding),
         ) {
             items((0..500).toList()) {
                 Text(
@@ -42,7 +42,7 @@ private fun OverviewView(title: String, onListElementClicked: (id: Int) -> Unit)
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable { onListElementClicked(it) }
-                        .padding(AppTheme.dimens.dimen16)
+                        .padding(AppTheme.dimens.dimen16),
                 )
             }
         }
@@ -55,7 +55,7 @@ private fun OverviewPreview() {
     AppTheme {
         OverviewView(
             title = stringResource(id = R.string.app_name),
-            onListElementClicked = {}
+            onListElementClicked = {},
         )
     }
 }

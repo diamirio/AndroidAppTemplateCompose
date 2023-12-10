@@ -23,5 +23,5 @@ data class AppBuildInfo(
     val flavor: String,
     val versionCode: Int,
     val versionName: String,
-    val baseUrl: String
+    val baseUrl: String,
 )

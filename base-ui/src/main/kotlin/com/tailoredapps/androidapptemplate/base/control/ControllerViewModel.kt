@@ -36,7 +36,7 @@ abstract class ControllerViewModel<Action, State> : ViewModel() {
         super.onCleared()
         AppWatcher.objectWatcher.expectWeaklyReachable(
             this,
-            "${this::class.java.simpleName}.onCleared"
+            "${this::class.java.simpleName}.onCleared",
         )
     }
 }
