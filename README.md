@@ -107,6 +107,9 @@ Insert the dependency in the `libs.versions.toml` file, perform a gradle sync an
 
 Use `./gradlew lintKotlin` to lint your code and `./gradlew formatKotlin` to format according to the specified lint rules
 
+Enable/disable rules in `.editorconfig`
+
+> ATTENTION: When you modify `.editorconfig` make sure to restart the gradle daemon (`./gradlew --stop`) otherwise the changes made to `.editorconfig` might not be applied. (More infos [here](https://github.com/jeremymailen/kotlinter-gradle/issues/336#issuecomment-1676235455))
 
 ## Recommended Reading <a name="recommended_reading"></a>
 * [Kotlin](https://kotlinlang.org/docs/reference/)
