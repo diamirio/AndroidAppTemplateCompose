@@ -6,9 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun MainScreen(
-    initNavigation: @Composable (navHostController: NavHostController) -> Unit,
-) {
+fun MainScreen(initNavigation: @Composable (navHostController: NavHostController) -> Unit) {
     val mainNavHostController = rememberNavController()
 
     Surface {

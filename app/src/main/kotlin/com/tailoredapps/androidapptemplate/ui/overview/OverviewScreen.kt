@@ -31,10 +31,7 @@ fun OverviewScreen(
 }
 
 @Composable
-private fun OverviewView(
-    title: String,
-    onListElementClicked: (id: Int) -> Unit
-) {
+private fun OverviewView(title: String, onListElementClicked: (id: Int) -> Unit) {
     AppScaffold(title = title) { contentPadding ->
         LazyColumn(
             modifier = Modifier.padding(contentPadding)
@@ -62,4 +59,3 @@ private fun OverviewPreview() {
         )
     }
 }
-

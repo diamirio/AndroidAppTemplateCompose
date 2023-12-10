@@ -25,7 +25,9 @@ import androidx.compose.ui.unit.dp
 import com.tailoredapps.androidapptemplate.base.ui.theme.AppTheme
 
 enum class AppTopBarSize {
-    Small, Medium, Large
+    Small,
+    Medium,
+    Large
 }
 
 @Composable

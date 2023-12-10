@@ -33,7 +33,8 @@ class OverviewViewModel(
 
     object State
 
-    override val controller: Controller<Action, State> = viewModelScope.createController<Action, Mutation, State>(
-        initialState = State
-    )
+    override val controller: Controller<Action, State> =
+        viewModelScope.createController<Action, Mutation, State>(
+            initialState = State
+        )
 }
