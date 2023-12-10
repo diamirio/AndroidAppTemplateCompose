@@ -88,12 +88,16 @@ android {
 
     bundle {
         language {
+            @Suppress("UnstableApiUsage")
             enableSplit = false
         }
         density {
+
+            @Suppress("UnstableApiUsage")
             enableSplit = false
         }
         abi {
+            @Suppress("UnstableApiUsage")
             enableSplit = true
         }
     }
