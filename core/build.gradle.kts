@@ -38,13 +38,20 @@ android {
 
 dependencies {
     api(libs.jakewharton.timber)
-    implementation(libs.jakewharton.retrofit2.kotlinx.serialization.converter)
     api(libs.koin.core)
     api(libs.kotlinx.collections.immutable)
     api(libs.kotlinx.coroutines.core)
+
+    implementation(libs.jakewharton.retrofit2.kotlinx.serialization.converter)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.square.okhttp.core)
     implementation(libs.square.okhttp.interceptor)
     implementation(libs.square.retrofit.core)
     implementation(libs.square.retrofit.converter.scalars)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mock)
 }
