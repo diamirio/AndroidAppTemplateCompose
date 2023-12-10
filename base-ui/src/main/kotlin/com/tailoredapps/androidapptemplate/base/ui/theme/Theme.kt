@@ -82,10 +82,7 @@ val smallDimensions = Dimensions()
 val sw360Dimensions = Dimensions()
 
 @Composable
-fun ProvideDimens(
-    dimensions: Dimensions,
-    content: @Composable () -> Unit,
-) {
+fun ProvideDimens(dimensions: Dimensions, content: @Composable () -> Unit) {
     val dimensionSet = remember { dimensions }
     CompositionLocalProvider(LocalAppDimens provides dimensionSet, content = content)
 }
@@ -95,10 +92,7 @@ private val LocalAppDimens = staticCompositionLocalOf {
 }
 
 @Composable
-fun AppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit,
-) {
+fun AppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val colorScheme = if (darkTheme) {
         DarkColorScheme
     } else {
@@ -116,7 +110,6 @@ fun AppTheme(
             content = content
         )
     }
-
 }
 
 object AppTheme {

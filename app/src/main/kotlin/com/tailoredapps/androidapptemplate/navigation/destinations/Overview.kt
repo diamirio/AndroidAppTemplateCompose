@@ -13,5 +13,4 @@ internal fun NavGraphBuilder.overviewScreen(onListElementClicked: (Int) -> Unit)
     }
 }
 
-internal fun NavController.navigateToOverview() =
-    this.navigate(ROUTE_OVERVIEW)
+internal fun NavController.navigateToOverview() = this.navigate(ROUTE_OVERVIEW)

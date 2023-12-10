@@ -20,7 +20,7 @@ enum class NavGraphs(
     val route: String
 ) {
     Main("nav_main"),
-    Overview("nav_overview"),
+    Overview("nav_overview")
 }
 
 /**
