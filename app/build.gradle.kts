@@ -51,12 +51,12 @@ android {
             applicationIdSuffix = ".dev"
             resValue("string", "app_name", "${Config.appName} Dev")
             resValue("string", "leak_canary_display_activity_label", "${Config.appName} Leaks")
-            buildConfigField("String", "BASE_URL", "\"https://restcountries.eu/rest/v2/\"")
+            buildConfigField("String", "BASE_URL", "\"https://jobs.diamir.io/\"")
             dimension = "main"
         }
         create("prod") {
             resValue("string", "app_name", Config.appName)
-            buildConfigField("String", "BASE_URL", "\"https://restcountries.eu/rest/v2/\"")
+            buildConfigField("String", "BASE_URL", "\"https://jobs.diamir.io/\"")
             dimension = "main"
         }
     }
@@ -92,7 +92,6 @@ android {
             enableSplit = false
         }
         density {
-
             @Suppress("UnstableApiUsage")
             enableSplit = false
         }

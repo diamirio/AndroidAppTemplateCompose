@@ -58,7 +58,7 @@ Despite you and your *brain* being the judge of how the project should best be s
 2. `base-ui`: A base Android module containing reusable UI components.
 3. `app`: An Android module containing the application.
 
-When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `gradle/sample/android-module.gradle.kts` or `gradle/sample/java-module.gradle.kts`.
+When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `gradle/sample/android-module.gradle.kts` or `gradle/sample/kotlin-module.gradle.kts`.
 
 
 ## Module/Package structure <a name="module_structure"></a>
@@ -124,7 +124,7 @@ Enable/disable rules in `.editorconfig`
 
 ## License <a name="license"></a>
 ```
-Copyright 2023 Tailored Media GmbH.
+Copyright 2024 Tailored Media GmbH.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
