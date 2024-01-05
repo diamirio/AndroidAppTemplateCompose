@@ -86,6 +86,7 @@ android {
         }
     }
 
+    // more infos: https://developer.android.com/guide/app-bundle/configure-base#disable_config_apks
     bundle {
         language {
             @Suppress("UnstableApiUsage")
