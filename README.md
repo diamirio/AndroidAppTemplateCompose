@@ -20,7 +20,6 @@ Check out [AndroidAppUtil](https://github.com/tailoredmedia/AndroidAppUtil) for 
     * [Dependencies](#dependencies)
         * [How to add a dependency](#adddependencies)
     * [ktlint](#ktlint)
-    * [Resource Naming Conventions](#resource_naming_conventions)
 * [Recommended Reading](#recommended_reading)
 * [License](#license)
 
@@ -59,7 +58,7 @@ Despite you and your *brain* being the judge of how the project should best be s
 2. `base-ui`: A base Android module containing reusable UI components.
 3. `app`: An Android module containing the application.
 
-When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `gradle/library-module-android.gradle` or `gradle/library-module.gradle`.
+When creating new modules, you should probably use (apply) one of the predefined library-module gradle files: `gradle/sample/android-module.gradle.kts` or `gradle/sample/kotlin-module.gradle.kts`.
 
 
 ## Module/Package structure <a name="module_structure"></a>
@@ -91,57 +90,26 @@ apply from: rootProject.file("gradle/XXX.gradle")
 
 ### Dependencies <a name="dependencies"></a>
 
-**All** dependencies are located in the `Libs.kt` file in the `buildSrc` folder. To implement them use `implementation Libs.XXX`.
+**All** dependencies are located in the `libs.versions.toml` file in the gradle folder and can be accessed in all modules.
 
-Checking whether dependencies are ready to be updated, use `./gradlew refreshVersions`. Afterwards the newer version is added as comments to the `versions.properties` file. Look [here](https://github.com/jmfayard/buildSrcVersions) for the `refreshVersions` gradle plugin that is used for that.
+Checking whether new dependencies are available can be done by navigating to the `libs.versions.toml` file and checking the lint warnings or executing `./gradlew dependencyUpdates` (more infos can be found [here](https://github.com/ben-manes/gradle-versions-plugin#multi-project-build))
 
 
 #### How to add a Dependency <a name="adddependencies"></a>
 
-If you want to add a new dependency, add it to the module's `build.gradle` as you would normally:
+Insert the dependency in the `libs.versions.toml` file, perform a gradle sync and use the specified name in the `build.gradle.kts` file.
 
-``` groovy
-def room_version = "1.0.0"
-implementation "androidx.room:room-runtime:$room_version"
-```
+> Underscores in `libs.versions.toml` are converted to dots: "androidx-core-ktx" -> "libs.androidx.core.ktx"
 
-Afterwards execute `./gradlew buildSrcLibs`. This task then extracts the dependency, adds it to `Libs.kt`, adds its version to `versions.properties` and automatically adds any updates next to the version if there is any.
-**Do not** add your dependency manually to `Libs.kt` - this works but is discouraged.
-
-After the plugin has added your dependency to the `Libs.kt` file, replace the lines in your `build.gradle`:
-
-``` groovy
-implementation(Libs.room_runtime)
-```
 
 ### ktlint <a name="ktlint"></a>
 [ktlint](https://ktlint.github.io/) is a *Kotlin* linter and formatter. Using it is required to keep the code base clean and readable.
 
-Use `./gradlew ktlintCheck` to lint your code.
+Use `./gradlew lintKotlin` to lint your code and `./gradlew formatKotlin` to format according to the specified lint rules
 
-To conform to the rules either:
+Enable/disable rules in `.editorconfig`
 
-* configure AndroidStudio [accordingly](https://github.com/pinterest/ktlint#-with-intellij-idea).
-* use `./gradlew ktlintApplyToIdea` to overwrite IDE style files. Read more [here](https://github.com/JLLeitschuh/ktlint-gradle).
-
-
-### Resource Naming Conventions <a name="resource_naming_conventions"></a>
-
-The goal of these conventions is to reduce the effort needed to read and understand code and also enable reviews to focus on more important issues than arguing over syntax.
-
-**Bold** rules should be applied. *Italic* rules are optional.
-
-| Component        | Rule             | Example                   |
-| ---------------- | ---------------------- | ----------------------------- |
-| Layouts | **\<what\>**\_**\<where\>**.xml | `activity_main.xml`, `item_detail.xml` |
-| Sub-Layouts | **\<what\>**\_**\<where\>**\_**\<description\>**.xml | `activity_main_appbar.xml` |
-| Strings | **\<where\>**\_**\<what\>**\_**\<description\>** | `detail_tv_location` |
-| Drawables | **\<what\>**\_**\<where\>**\_**\<description\>** | `btn_detail_background`, `card_overview_background` |
-| Icons | ic_**\<description\>**\_**\<where\>**.xml | `ic_close.xml`, `ic_location_pin_detail.xml` |
-| Dimensions | *\<where\>*\_**\<what\>**\_*\<description\>*\_*\<size\>* | `margin`, `detail_height_card`, `textsize_small` |
-| Styles | **\<What\>**\.**\<Description\>** | `Text.Bold`, `Ratingbar.Preview` |
-| Component Ids | **\<what\>\<Description\>** | `btnOpen`, `tvTitle` |
-
+> ATTENTION: When you modify `.editorconfig` make sure to restart the gradle daemon (`./gradlew --stop`) otherwise the changes made to `.editorconfig` might not be applied. (More infos [here](https://github.com/jeremymailen/kotlinter-gradle/issues/336#issuecomment-1676235455))
 
 ## Recommended Reading <a name="recommended_reading"></a>
 * [Kotlin](https://kotlinlang.org/docs/reference/)
@@ -156,7 +124,7 @@ The goal of these conventions is to reduce the effort needed to read and underst
 
 ## License <a name="license"></a>
 ```
-Copyright 2022 Tailored Media GmbH.
+Copyright 2024 Tailored Media GmbH.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

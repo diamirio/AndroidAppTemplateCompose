@@ -1,6 +1,6 @@
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
+# proguardFiles setting in build.gradle.kts.
 #
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
@@ -16,15 +16,6 @@
 -keep class com.squareup.haha.** { *; }
 -keep class com.squareup.leakcanary.** { *; }
 -dontwarn android.app.Notification
-
-# Gson
--keepattributes Signature
--keepattributes *Annotation*
--dontwarn sun.misc.**
--keep class com.google.gson.examples.android.model.** { *; }
--keep class * implements com.google.gson.TypeAdapterFactory
--keep class * implements com.google.gson.JsonSerializer
--keep class * implements com.google.gson.JsonDeserializer
 
 # Retrofit
 # https://r8.googlesource.com/r8/+/refs/heads/master/compatibility-faq.md?source=post_page-----c5db1488ad4a--------------------------------#r8-full-mode

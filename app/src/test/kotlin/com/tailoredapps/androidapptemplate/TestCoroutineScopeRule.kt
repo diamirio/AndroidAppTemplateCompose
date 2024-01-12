@@ -39,7 +39,7 @@ import kotlin.coroutines.ContinuationInterceptor
  */
 @ExperimentalCoroutinesApi
 class TestCoroutineScopeRule(
-    val overrideMainDispatcher: Boolean = false
+    val overrideMainDispatcher: Boolean = false,
 ) : TestRule, TestCoroutineScope by TestCoroutineScope() {
 
     val testDispatcher = coroutineContext[ContinuationInterceptor] as TestCoroutineDispatcher

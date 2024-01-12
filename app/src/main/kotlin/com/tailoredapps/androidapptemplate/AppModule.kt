@@ -34,7 +34,7 @@ private fun provideAppBuildInfo(context: Context): AppBuildInfo = AppBuildInfo(
     flavor = BuildConfig.FLAVOR,
     versionCode = BuildConfig.VERSION_CODE,
     versionName = BuildConfig.VERSION_NAME,
-    baseUrl = BuildConfig.BASE_URL
+    baseUrl = BuildConfig.BASE_URL,
 )
 
 internal val appModules = listOf(appModule, overviewModule)

@@ -16,4 +16,3 @@ internal fun NavGraphBuilder.detailScreen() {
 
 internal fun NavController.navigateToDetail(id: Int) =
     this.navigate(ROUTE_DETAIL_WITH_ARGS.replace("{id}", id.toString()))
-

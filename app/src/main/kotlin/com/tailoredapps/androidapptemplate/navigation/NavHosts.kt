@@ -13,11 +13,11 @@ import com.tailoredapps.androidapptemplate.navigation.destinations.overviewScree
 
 enum class NavHosts(val route: String) {
     App("nav_host_app"),
-    Main("nav_host_main")
+    Main("nav_host_main"),
 }
 
 enum class NavGraphs(
-    val route: String
+    val route: String,
 ) {
     Main("nav_main"),
     Overview("nav_overview"),
@@ -31,7 +31,7 @@ fun NavHostController.AppNavHost() {
     NavHost(
         navController = this,
         route = NavHosts.App.route,
-        startDestination = NavGraphs.Main.route
+        startDestination = NavGraphs.Main.route,
     ) {
         navigation(startDestination = ROUTE_MAIN, route = NavGraphs.Main.route) {
             mainScreen { navHostController ->
@@ -49,11 +49,11 @@ fun NavHostController.MainNavHost() {
     NavHost(
         navController = this,
         route = NavHosts.Main.route,
-        startDestination = NavGraphs.Overview.route
+        startDestination = NavGraphs.Overview.route,
     ) {
         navigation(startDestination = ROUTE_OVERVIEW, route = NavGraphs.Overview.route) {
             overviewScreen(
-                onListElementClicked = this@MainNavHost::navigateToDetail
+                onListElementClicked = this@MainNavHost::navigateToDetail,
             )
 
             detailScreen()

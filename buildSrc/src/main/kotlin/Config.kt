@@ -1,5 +1,3 @@
-import org.gradle.api.JavaVersion
-
 object Config {
 
     @JvmStatic
@@ -18,16 +16,32 @@ object Config {
     val versionName = "0.0.1"
 
     @JvmStatic
+    val versionFull = "v$versionName-b$versionCode"
+
+    @JvmStatic
     val appName = "AndroidAppTemplate"
 
     @JvmStatic
     val applicationId = "com.tailoredapps.androidapptemplate"
 
     @JvmStatic
-    val archiveName = "$appName-v$versionName-b$versionCode"
+    val namespace = "com.tailoredapps.androidapptemplate"
 
     @JvmStatic
-    val javaVersion = JavaVersion.VERSION_17
+    val archiveName = "$appName-$versionFull"
+
+    @JvmStatic
+    val jvmVersion = JvmVersion.JVM_17
+
+    const val mainSourceSet = "src/main/kotlin"
+
+    const val testSourceSet = "src/test/kotlin"
+
+    const val androidTestSourceSet = "src/androidTest/kotlin"
+
+    const val lintWarningsAsErrors = true
+
+    const val lintAbortOnError = false
 
     @JvmStatic
     val kotlinFreeCompilerArgs = listOf(

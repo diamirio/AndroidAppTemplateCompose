@@ -27,7 +27,7 @@ fun AppScaffold(
     scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
     navigationIcon: @Composable () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
-    content: @Composable (PaddingValues) -> Unit
+    content: @Composable (PaddingValues) -> Unit,
 ) {
     AppScaffold(
         topBar = {
@@ -37,11 +37,11 @@ fun AppScaffold(
                 scrollBehavior = scrollBehavior,
                 navigationIcon = navigationIcon,
                 actions = actions,
-                usesTonalElevation = usesTonalElevation
+                usesTonalElevation = usesTonalElevation,
             )
         },
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        content = content
+        content = content,
     )
 }
 
@@ -53,7 +53,7 @@ fun AppScaffold(
     scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
     navigationIcon: @Composable () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
-    content: @Composable (PaddingValues) -> Unit
+    content: @Composable (PaddingValues) -> Unit,
 ) {
     AppScaffold(
         topBar = {
@@ -63,11 +63,11 @@ fun AppScaffold(
                 scrollBehavior = scrollBehavior,
                 navigationIcon = navigationIcon,
                 actions = actions,
-                usesTonalElevation = usesTonalElevation
+                usesTonalElevation = usesTonalElevation,
             )
         },
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        content = content
+        content = content,
     )
 }
 
@@ -82,7 +82,7 @@ fun AppScaffold(
     containerColor: Color = MaterialTheme.colorScheme.background,
     contentColor: Color = contentColorFor(containerColor),
     contentWindowInsets: WindowInsets = ScaffoldDefaults.contentWindowInsets,
-    content: @Composable (PaddingValues) -> Unit
+    content: @Composable (PaddingValues) -> Unit,
 ) = Scaffold(
     modifier = modifier,
     topBar = topBar,
@@ -93,5 +93,5 @@ fun AppScaffold(
     containerColor = containerColor,
     contentColor = contentColor,
     contentWindowInsets = contentWindowInsets,
-    content = content
+    content = content,
 )

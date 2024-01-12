@@ -42,7 +42,7 @@ private val LightColorScheme = lightColorScheme(
     inversePrimary = md_theme_light_inversePrimary,
     surfaceTint = md_theme_light_surfaceTint,
     outlineVariant = md_theme_light_outlineVariant,
-    scrim = md_theme_light_scrim
+    scrim = md_theme_light_scrim,
 )
 
 private val DarkColorScheme = darkColorScheme(
@@ -74,7 +74,7 @@ private val DarkColorScheme = darkColorScheme(
     inversePrimary = md_theme_dark_inversePrimary,
     surfaceTint = md_theme_dark_surfaceTint,
     outlineVariant = md_theme_dark_outlineVariant,
-    scrim = md_theme_dark_scrim
+    scrim = md_theme_dark_scrim,
 )
 
 val smallDimensions = Dimensions()
@@ -82,10 +82,7 @@ val smallDimensions = Dimensions()
 val sw360Dimensions = Dimensions()
 
 @Composable
-fun ProvideDimens(
-    dimensions: Dimensions,
-    content: @Composable () -> Unit,
-) {
+fun ProvideDimens(dimensions: Dimensions, content: @Composable () -> Unit) {
     val dimensionSet = remember { dimensions }
     CompositionLocalProvider(LocalAppDimens provides dimensionSet, content = content)
 }
@@ -95,10 +92,7 @@ private val LocalAppDimens = staticCompositionLocalOf {
 }
 
 @Composable
-fun AppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit,
-) {
+fun AppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val colorScheme = if (darkTheme) {
         DarkColorScheme
     } else {
@@ -113,10 +107,9 @@ fun AppTheme(
             colorScheme = colorScheme,
             typography = Typography,
             shapes = Shapes,
-            content = content
+            content = content,
         )
     }
-
 }
 
 object AppTheme {

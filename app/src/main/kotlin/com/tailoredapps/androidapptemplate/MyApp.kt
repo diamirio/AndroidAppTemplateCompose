@@ -18,7 +18,6 @@
 package com.tailoredapps.androidapptemplate
 
 import android.app.Application
-import com.jakewharton.threetenabp.AndroidThreeTen
 import com.tailoredapps.androidapptemplate.core.coreModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -32,8 +31,6 @@ class MyApp : Application() {
         super.onCreate()
 
         Timber.plant(Timber.DebugTree())
-
-        AndroidThreeTen.init(this)
 
         startKoin {
             androidLogger(Level.ERROR)
